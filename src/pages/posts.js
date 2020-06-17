@@ -10,7 +10,7 @@ export default function Home() {
   <Layout>
 
     <h1 className={styles.title}>
-      Hello World!
+      Posts!
     </h1>
 
   </Layout>
