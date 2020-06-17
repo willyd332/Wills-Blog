@@ -1,18 +1,45 @@
 import React from "react"
-import { Link } from "gatsby"
-import styles from "./css-modules/layout.module.css"
+import { useStaticQuery, Link, graphql } from "gatsby"
+import styles from "./styles/layout.module.css";
 
 export default function Layout(props) {
 
-
+    const data = useStaticQuery(
+        graphql
+        `
+        query {
+            site {
+            siteMetadata {
+                title
+            }
+            }
+        }
+        `
+    );
 
     return (
-    <div>
-        <div className={styles.topBar}>
-            <Link className={styles.link} to="/">
+    <div
+    className={styles.layoutBox}
+    >
+        <div
+        className={styles.navBox}
+        >
+            <Link
+            to="/"
+            className={styles.title}
+             >
+                {data.site.siteMetadata.title}
+            </Link>
+            <Link 
+            className={styles.navLink}
+            to="/"
+            >
                 Home
             </Link>
-            <Link className={styles.link} to="/posts/">
+            <Link 
+            className={styles.navLink}
+            to="/posts/"
+            >
                 Blog Posts
             </Link>
         </div>

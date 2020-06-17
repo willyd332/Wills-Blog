@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import styles from "./styles/posts.module.css"
 
-import styles from "./css-modules/index.module.css"
 import Layout from "../components/layout"
 
 export default function Home() {
@@ -9,10 +9,32 @@ export default function Home() {
   return (
   <Layout>
 
-    <h1 className={styles.title}>
-      Posts!
-    </h1>
+    <div 
+    className={styles.header}
+    >
+        Hello Posts!
+    </div>
 
   </Layout>
   )
 }
+
+
+export const query = graphql
+`
+  query {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`

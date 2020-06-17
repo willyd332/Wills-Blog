@@ -1,0 +1,13 @@
+.header {
+    color: purple;
+}
+
+.headerBox {
+    margin: 2rem;
+    max-width: 600;
+    text-align: center;
+}
+
+div {
+    border: 1px solid black;
+}

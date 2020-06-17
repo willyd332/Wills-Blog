@@ -6,9 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
-    siteUrl: `https://www.gatsbyjs.org`,
-    description: `Blazing fast modern site generator for React`,
+    title: `Will's Blog`,
+    description: `A blog made by Will`,
   },
   plugins: [
     "gatsby-transformer-remark",
@@ -18,6 +17,26 @@ module.exports = {
       name: `docs`,
       path: `${__dirname}/src`,
      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      }
     }
   ]
 }
