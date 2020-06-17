@@ -2,7 +2,11 @@
     color: purple;
 }
 
-
-div {
-    border: 1px solid black;
+.blogLink {
+    border: 2px solid gray;
+    padding: 1em;
 }
+
+/* div {
+    border: 1px solid black;
+} */
