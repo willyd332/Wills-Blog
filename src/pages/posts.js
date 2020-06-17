@@ -24,7 +24,8 @@ export default function Posts(props) {
         {data.totalCount} Posts
       </h3>
       {data.edges.map(({ node }) => (
-          <div 
+          <Link
+          to={node.fields.slug}
           className={styles.blogLink}
           key={node.id}
           >
@@ -35,7 +36,7 @@ export default function Posts(props) {
              {node.frontmatter.date}
              </p>
              <p>{node.excerpt}</p>
-          </div>
+          </Link>
         ))}
     </div>
 
@@ -47,7 +48,7 @@ export default function Posts(props) {
 export const query = graphql
 `
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -55,6 +56,9 @@ export const query = graphql
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
           }
           excerpt
         }
