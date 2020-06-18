@@ -1,6 +1,6 @@
 ---
-path: test/blog-post
-date: 2019-06-17
+path: test
+date: 2019-06-17T00:00:00.000Z
 title: Test Blog Post
 ---
 
