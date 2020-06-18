@@ -6,37 +6,37 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Will's Blog`,
-    description: `A blog made by Will`,
+    title: 'Will\'s Blog',
+    description: 'A blog made by Will',
   },
   plugins: [
-    "gatsby-transformer-remark",
+    'gatsby-transformer-remark',
     {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `docs`,
-      path: `${__dirname}/src`,
-     },
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'docs',
+        path: `${__dirname}/src`,
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
+        name: 'assets',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`,
+        name: 'blog',
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      }
-    }
-  ]
-}
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
+  ],
+};

@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import Layout from '../components/layout';
 
 export default function BlogPost(props) {
-
-    const post = props.data.markdownRemark
-
+  const post = props.data.markdownRemark;
   return (
     <Layout>
       <div>
@@ -13,13 +12,10 @@ export default function BlogPost(props) {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
-  )
+  );
 }
 
-
-
-export const data = graphql
-`
+export const data = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
@@ -28,4 +24,20 @@ export const data = graphql
       }
     }
   }
-`
+`;
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      fields: PropTypes.shape({
+        slug: PropTypes.shape({
+          eg: PropTypes.string,
+        }),
+      }),
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }),
+};

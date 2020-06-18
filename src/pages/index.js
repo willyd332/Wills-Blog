@@ -1,31 +1,23 @@
-import React from "react"
-import { Link } from "gatsby"
-import styles from "./styles/index.module.css"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import styles from './styles/index.module.css';
 
-import Layout from "../components/layout"
+import Layout from '../components/layout';
 
 export default function Home(props) {
-
-  console.log(props.data.allFile)
-
   return (
   <Layout>
-    <div
-    className={styles.headerBox}
-    >
-      <h1
-      className={styles.header}
-      >
+    <div className={styles.headerBox} >
+      <h1 className={styles.header} >
           {props.data.site.siteMetadata.title}
       </h1>
     </div>
   </Layout>
-  )
+  );
 }
 
-export const data = graphql
-`
+export const data = graphql`
   query {
     site {
       siteMetadata {
@@ -33,4 +25,14 @@ export const data = graphql
       }
     }
   }
-`
+`;
+
+Home.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }),
+};

@@ -1,12 +1,11 @@
-import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import styles from "./styles/layout.module.css";
+import React from 'react';
+import { useStaticQuery, Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import styles from './styles/layout.module.css';
 
 export default function Layout(props) {
-
-    const data = useStaticQuery(
-        graphql
-        `
+  const data = useStaticQuery(
+    graphql`
         query {
             site {
             siteMetadata {
@@ -14,10 +13,9 @@ export default function Layout(props) {
             }
             }
         }
-        `
-    );
-
-    return (
+        `,
+  );
+  return (
     <div
     className={styles.layoutBox}
     >
@@ -30,13 +28,13 @@ export default function Layout(props) {
              >
                 {data.site.siteMetadata.title}
             </Link>
-            <Link 
+            <Link
             className={styles.navLink}
             to="/"
             >
                 Home
             </Link>
-            <Link 
+            <Link
             className={styles.navLink}
             to="/posts/"
             >
@@ -45,6 +43,9 @@ export default function Layout(props) {
         </div>
         {props.children}
    </div>
-   )
-  }
-  
+  );
+}
+
+Layout.propTypes = {
+  children: PropTypes.object,
+};
