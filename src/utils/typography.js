@@ -1,6 +1,4 @@
 import Typography from 'typography';
-// import moragaTheme from 'typography-theme-moraga'
-// import oceanBeachTheme from 'typography-theme-ocean-beach'
 
 const typography = new Typography({
   baseFontSize: '18px',
@@ -14,9 +12,5 @@ const typography = new Typography({
   bodyWeight: 400,
   bodyFontFamily: ['Gill Sans'],
 });
-
-// const typography = new Typography(moragaTheme)
-
-// const typography = new Typography(oceanBeachTheme)
 
 export default typography;

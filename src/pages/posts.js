@@ -21,9 +21,9 @@ export default function Posts(props) {
       </h3>
       {data.edges.map(({ node }) => (
           <Link
-          to={node.fields.slug}
-          className={styles.blogLink}
-          key={node.id}
+            to={node.fields.slug}
+            className={styles.blogLink}
+            key={node.id}
           >
              <h2>
                {node.frontmatter.title}
