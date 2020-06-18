@@ -11,27 +11,22 @@ export default function Posts(props) {
   return (
   <Layout>
 
-    <div className={styles.header} >
-        Hello Posts!
-    </div>
-
-    <div className={styles.articleList} >
-      <h3>
-        {data.totalCount} Posts
-      </h3>
+    <div className={`container ${styles.articleList}`} >
       {data.edges.map(({ node }) => (
           <Link
             to={node.fields.slug}
-            className={styles.blogLink}
+            className={`row ${styles.blogLink}`}
             key={node.id}
           >
-             <h2>
+             <h2 className='col-8 postTitle'>
                {node.frontmatter.title}
              </h2>
-             <p>
+             <p className='col-4 postDate'>
              {node.frontmatter.date}
              </p>
-             <p>{node.excerpt}</p>
+             <p lassName='col-12'>
+             {node.excerpt}
+             </p>
           </Link>
       ))}
     </div>

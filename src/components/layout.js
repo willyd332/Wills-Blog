@@ -23,21 +23,21 @@ export default function Layout(props) {
         >
             <Link
               to="/"
-              className='title col-7 offset-1'
+              className='title col-lg-6 col-4 offset-1'
              >
                 {data.site.siteMetadata.title}
             </Link>
             <Link
-              className='navLink col-2'
+              className='navLink col-lg-2 col-3'
               to="/"
             >
                 Home
             </Link>
             <Link
-              className='navLink col-2'
+              className='navLink col-lg-2 col-3 left-offset-1'
               to="/posts/"
             >
-                Blog Posts
+                Archive
             </Link>
         </div>
         {props.children}
