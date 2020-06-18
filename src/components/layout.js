@@ -6,11 +6,11 @@ import styles from './styles/layout.module.css';
 export default function Layout(props) {
   const data = useStaticQuery(graphql`
         query {
-            site {
+          site {
             siteMetadata {
-                title
+              title
             }
-            }
+          }
         }
         `);
   return (
