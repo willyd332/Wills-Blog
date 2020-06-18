@@ -1,7 +1,8 @@
 import React from 'react';
 import { useStaticQuery, Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styles from './styles/layout.module.css';
+import './bootstrap-4.5.0-dist/css/bootstrap.css';
+import './styles/layout.css';
 
 export default function Layout(props) {
   const data = useStaticQuery(graphql`
@@ -15,28 +16,28 @@ export default function Layout(props) {
         `);
   return (
     <div
-    className={styles.layoutBox}
+    className='layoutBox container-fluid'
     >
         <div
-        className={styles.navBox}
+        className='navBox row'
         >
             <Link
               to="/"
-              className={styles.title}
+              className='title col-lg-6 col-4 offset-1'
              >
                 {data.site.siteMetadata.title}
             </Link>
             <Link
-              className={styles.navLink}
+              className='navLink col-lg-2 col-3'
               to="/"
             >
                 Home
             </Link>
             <Link
-              className={styles.navLink}
+              className='navLink col-lg-2 col-3 left-offset-1'
               to="/posts/"
             >
-                Blog Posts
+                Archive
             </Link>
         </div>
         {props.children}
