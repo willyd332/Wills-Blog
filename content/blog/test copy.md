@@ -1,6 +1,7 @@
 ---
-title: "Test Blog Post"
-date: "2019-06-17"
+path: test/blog-post
+date: 2019-06-17
+title: Test Blog Post
 ---
 
 ##This is not the greated markdown in word.
