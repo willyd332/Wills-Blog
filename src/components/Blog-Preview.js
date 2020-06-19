@@ -13,9 +13,12 @@ export default function BlogPreview(props) {
             <div className='col-12'>
                 {postInfo.frontmatter.title}
             </div>
-            <div className='col-12'>
-                This Will Be Image When I Figure It Out
-            </div>
+            <img
+              className='col-12' 
+              src={ postInfo.frontmatter.imageUrl }
+              alt={postInfo.frontmatter.imageAlt}
+
+            />
             <div className='col-12'>
                 {postInfo.excerpt}
             </div>
@@ -42,6 +45,10 @@ BlogPreview.propTypes = {
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
       date: PropTypes.string,
+      author: PropTypes.string,
+      tags: PropTypes.array,
+      imageAlt: PropTypes.string,
+      imageUrl: PropTypes.string,
     }),
     fields: PropTypes.shape({
       slug: PropTypes.string,

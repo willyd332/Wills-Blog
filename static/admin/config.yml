@@ -17,4 +17,5 @@ collections:
       - { name: author, label: Author }
       - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
-      - { name: image, label: Image, widget: image }
+      - { name: imageUrl, label: ImageUrl }
+      - { name: imageAlt, lable: ImageAlt }

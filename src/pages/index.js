@@ -20,28 +20,27 @@ export default function Home(props) {
 }
 
 export const data = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 400)
+{
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          author
+          tags
+          imageAlt
+          imageUrl
         }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 400)
       }
     }
   }
+}
 `;
 
 Home.propTypes = {
@@ -54,6 +53,10 @@ Home.propTypes = {
           frontmatter: PropTypes.shape({
             title: PropTypes.string,
             date: PropTypes.string,
+            author: PropTypes.string,
+            tags: PropTypes.array,
+            imageAlt: PropTypes.string,
+            imageUrl: PropTypes.string,
           }),
           fields: PropTypes.shape({
             slug: PropTypes.string,
