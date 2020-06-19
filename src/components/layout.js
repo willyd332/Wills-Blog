@@ -5,7 +5,6 @@ import TitleTile from './Title-Tile';
 import InfoTile from './Info-Tile';
 
 export default function Layout(props) {
-  console.log(props);
   return (
     <div className='container-fluid'>
       <TitleTile imgUrl={ props.mainImgUrl } imgAlt={ props.mainImgAlt }/>
