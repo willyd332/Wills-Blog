@@ -39,6 +39,7 @@ export default function InfoTile() {
             </Link>
       );
     }
+    return null;
   });
 
   // eslint-disable-next-line max-len

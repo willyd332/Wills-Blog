@@ -1,12 +1,13 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import '../components/styles/bootstrap.css';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
-import BlogPreview from '../components/Blog-Preview';
 
 export default function Contact(props) {
   return (
-  <Layout>
+    <Layout mainImgUrl={ props.data.site.siteMetadata.defaultImgUrl } mainImgAlt="Main Image" >
     <div className='container-fluid'>
         <div className='row'>
             <div className='col-12'>
@@ -17,3 +18,22 @@ export default function Contact(props) {
   </Layout>
   );
 }
+
+export const data = graphql`
+{
+  site {
+    siteMetadata {
+      defaultImgUrl
+    }
+  }
+}`;
+
+Contact.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        defaultImgUrl: PropTypes.string,
+      }),
+    }),
+  }),
+};
