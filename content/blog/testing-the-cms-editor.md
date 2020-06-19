@@ -2,6 +2,11 @@
 path: CMS_Test
 date: 2020-06-19T01:58:44.489Z
 title: Testing The CMS Editor
+author: Will
+tags:
+  - metal
+  - music
+  - test
 ---
 ### Hopefully this works
 
