@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import styles from './styles/index.module.css';
+import '../components/styles/bootstrap.css';
+import styles from '../components/styles/index.module.css';
 
 import Layout from '../components/layout';
 
@@ -9,24 +10,23 @@ export default function Home(props) {
   const first = props.data.allMarkdownRemark.edges[0].node;
   return (
   <Layout>
-    <div className='container' style={{ marginTop: '5vh' }} >
-      <div className={`row ${styles.headerBox}`} >
-        <div className={`col-lg-5 ${styles.header}`} >
+    <div>
+      <div>
+        <div>
             Most Recent Post
         </div>
       </div>
       <div className={'row'} >
       <Link
             to={first.fields.slug}
-            className={`row ${styles.blogLink}`}
           >
-             <h2 className='col-8 postTitle'>
+             <h2>
                {first.frontmatter.title}
              </h2>
-             <p className='col-4 postDate'>
+             <p>
              {first.frontmatter.date}
              </p>
-             <p className='col-12'>
+             <p>
              {first.excerpt}
              </p>
           </Link>

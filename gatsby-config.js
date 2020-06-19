@@ -12,6 +12,8 @@ module.exports = {
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

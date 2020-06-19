@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styles from './styles/posts.module.css';
+import styles from '../components/styles/posts.module.css';
 
 import Layout from '../components/layout';
 
@@ -11,20 +11,19 @@ export default function Posts(props) {
   return (
   <Layout>
 
-    <div className={`container ${styles.articleList}`} >
+    <div>
       {data.edges.map(({ node }) => (
           <Link
             to={node.fields.slug}
-            className={`row ${styles.blogLink}`}
             key={node.id}
           >
-             <h2 className='col-8 postTitle'>
+             <h2>
                {node.frontmatter.title}
              </h2>
-             <p className='col-4 postDate'>
+             <p>
              {node.frontmatter.date}
              </p>
-             <p lassName='col-12'>
+             <p>
              {node.excerpt}
              </p>
           </Link>
