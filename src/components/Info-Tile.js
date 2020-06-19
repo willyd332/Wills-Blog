@@ -1,8 +1,51 @@
 import React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Socials from './Socials';
 
-export default function InfoTile(props) {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66];
+export default function InfoTile() {
+  const data = useStaticQuery(graphql`
+    query {
+        allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+        edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        tags
+                        title
+                    }
+                }
+            }
+        }
+    }
+    `);
+
+  const tags = {};
+  data.allMarkdownRemark.edges.forEach(({ node }) => {
+    node.frontmatter.tags.forEach((tag) => {
+      tags[tag] = tag;
+    });
+  });
+
+  const recentPosts = data.allMarkdownRemark.edges.map(({ node }, index) => {
+    if (index < 10) {
+      return (
+            <Link
+                to={node.fields.slug}
+                key={ index }
+                className='col-12'>
+                    {node.frontmatter.title}
+            </Link>
+      );
+    }
+  });
+
+  // eslint-disable-next-line max-len
+  const tagsInJsx = Object.keys(tags).map((tag, index) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
+            <div key={index} className='col-6'>
+            #{tag}
+        </div>));
 
   return (
     <div className='container-fluid'>
@@ -12,18 +55,10 @@ export default function InfoTile(props) {
             </div>
         </div>
         <div className='row'>
-            {arr.map((num) => (
-                <div key={{ num }} className='col-12'>
-                    Recent Post # {num}
-                </div>
-            ))}
+            {recentPosts}
         </div>
         <div className='row'>
-            {arr.map((num) => (
-                <div key={{ num }} className='col-6'>
-                    Tag#{num}
-                </div>
-            ))}
+            {tagsInJsx}
         </div>
     </div>
   );
