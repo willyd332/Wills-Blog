@@ -1,5 +1,4 @@
-import React, { Children } from 'react';
-import { useStaticQuery, Link, graphql } from 'gatsby';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './styles/layout.css';
 import TitleTile from './Title-Tile';
@@ -24,5 +23,8 @@ export default function Layout(props) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]),
 };
