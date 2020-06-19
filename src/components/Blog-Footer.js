@@ -5,7 +5,6 @@ export default function BlogFooter(props) {
   return (
     <div className='container-fluid'>
       <div className='row'>
-
       </div>
       <div className='row'>
         <div className='col-12'>

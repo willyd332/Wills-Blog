@@ -15,39 +15,39 @@ export default function TitleTile(props) {
     `);
   return (
     <div className="container-fluid" style={{ background: `url(${props.imgUrl}) no-repeat center`, backgroundSize: 'cover' }}>
-        <div className='container' style={{ height: '35vh' }}>
+      <div className='container' style={{ height: '35vh' }}>
+        <Link
+          to="/"
+          className='row'
+        >
+          <div className="offset-3 col-6" >
+            {data.site.siteMetadata.title}
+          </div>
+        </Link>
+          <div className='row' >
+            <div className="offset-3 col-6" >
+              {data.site.siteMetadata.description}
+            </div>
+          </div>
+      </div>
+      <div className="container" >
+        <div className='row'>
+          <div className='offset-3 col-6' >
             <Link
-                to="/"
-                className='row'
+              to="/"
+              className='col'
             >
-                <div className="offset-3 col-6" >
-                    {data.site.siteMetadata.title}
-                </div>
+              Home
             </Link>
-            <div className='row' >
-                <div className="offset-3 col-6" >
-                    {data.site.siteMetadata.description}
-                </div>
-            </div>
+            <Link
+              to="/contact/"
+              className='col'
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-        <div className="container" >
-            <div className='row'>
-                <div className='offset-3 col-6' >
-                    <Link
-                        to="/"
-                        className='col'
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        to="/contact/"
-                        className='col'
-                    >
-                        Contact
-                    </Link>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
   );
 }

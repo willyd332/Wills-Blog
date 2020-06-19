@@ -8,13 +8,13 @@ import Layout from '../components/layout';
 export default function Contact(props) {
   return (
     <Layout mainImgUrl={ props.data.site.siteMetadata.defaultImgUrl } mainImgAlt="Main Image" >
-    <div className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row'>
-            <div className='col-12'>
-                Soon I will Put Some Contact Info Here
-            </div>
+          <div className='col-12'>
+            Soon I will Put Some Contact Info Here
+          </div>
         </div>
-    </div>
+      </div>
   </Layout>
   );
 }
