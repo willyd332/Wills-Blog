@@ -2,6 +2,11 @@
 path: test
 date: 2019-06-17T00:00:00.000Z
 title: Test Blog Post
+author: Will
+tags:
+  - lorem
+  - test
+image: ../assets/profile.jpg
 ---
 
 ##This is not the greated markdown in word.
