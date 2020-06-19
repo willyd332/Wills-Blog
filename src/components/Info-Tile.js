@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Socials from './Socials';
@@ -34,7 +33,7 @@ export default function InfoTile() {
       return (
         <Link
           to={node.fields.slug}
-          key={index}
+          key={node.fields.slugnode.fields.slug}
           className='col-12'
         >
           {node.frontmatter.title}
@@ -46,7 +45,7 @@ export default function InfoTile() {
 
   // eslint-disable-next-line max-len
   const tagsInJsx = Object.keys(tags).map((tag, index) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
-    <div key={index} className='col-6'>
+    <div key={data.allMarkdownRemark.edges[index].id} className='col-6'>
       #
       {tag}
     </div>
