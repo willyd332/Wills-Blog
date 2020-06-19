@@ -15,7 +15,7 @@ export default function BlogPreview(props) {
         </div>
         <img
           className='col-12'
-          src={ postInfo.frontmatter.imageUrl }
+          src={postInfo.frontmatter.imageUrl}
           alt={postInfo.frontmatter.imageAlt}
         />
         <div className='col-12'>
@@ -53,5 +53,5 @@ BlogPreview.propTypes = {
       slug: PropTypes.string,
     }),
     excerpt: PropTypes.string,
-  }),
+  }).isRequired,
 };

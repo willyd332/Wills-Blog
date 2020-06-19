@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-export default function TitleTile(props) {
+export default function TitleTile({ imgUrl }) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -14,33 +14,33 @@ export default function TitleTile(props) {
     }
     `);
   return (
-    <div className="container-fluid" style={{ background: `url(${props.imgUrl}) no-repeat center`, backgroundSize: 'cover' }}>
+    <div className='container-fluid' style={{ background: `url(${imgUrl}) no-repeat center`, backgroundSize: 'cover' }}>
       <div className='container' style={{ height: '35vh' }}>
         <Link
-          to="/"
+          to='/'
           className='row'
         >
-          <div className="offset-3 col-6" >
+          <div className='offset-3 col-6'>
             {data.site.siteMetadata.title}
           </div>
         </Link>
-          <div className='row' >
-            <div className="offset-3 col-6" >
-              {data.site.siteMetadata.description}
-            </div>
-          </div>
-      </div>
-      <div className="container" >
         <div className='row'>
-          <div className='offset-3 col-6' >
+          <div className='offset-3 col-6'>
+            {data.site.siteMetadata.description}
+          </div>
+        </div>
+      </div>
+      <div className='container'>
+        <div className='row'>
+          <div className='offset-3 col-6'>
             <Link
-              to="/"
+              to='/'
               className='col'
             >
               Home
             </Link>
             <Link
-              to="/contact/"
+              to='/contact/'
               className='col'
             >
               Contact
@@ -53,6 +53,5 @@ export default function TitleTile(props) {
 }
 
 TitleTile.propTypes = {
-  imgUrl: PropTypes.string,
-  imgAlt: PropTypes.string,
+  imgUrl: PropTypes.string.isRequired,
 };

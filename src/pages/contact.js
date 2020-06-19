@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 
-export default function Contact(props) {
+export default function Contact({ data }) {
   return (
-    <Layout mainImgUrl={ props.data.site.siteMetadata.defaultImgUrl } mainImgAlt="Main Image" >
+    <Layout mainImgUrl={data.site.siteMetadata.defaultImgUrl}>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>
@@ -15,7 +15,7 @@ export default function Contact(props) {
           </div>
         </div>
       </div>
-  </Layout>
+    </Layout>
   );
 }
 
@@ -35,5 +35,5 @@ Contact.propTypes = {
         defaultImgUrl: PropTypes.string,
       }),
     }),
-  }),
+  }).isRequired,
 };

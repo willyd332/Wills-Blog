@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function BlogFooter(props) {
+export default function BlogFooter({ post }) {
   return (
     <div className='container-fluid'>
-      <div className='row'>
-      </div>
+      <div className='row' />
       <div className='row'>
         <div className='col-12'>
           Share To Social Media Buttons
@@ -23,11 +22,12 @@ export default function BlogFooter(props) {
         </div>
       </div>
       <div className='row'>
-         {props.post.frontmatter.tags.map((tag) => ( // ONE DAY THESE WILL BECOME LINKS TO TAG PAGES
-            <div className='col-1' key={tag}>
-              #{tag}
-            </div>
-         ))}
+        {post.frontmatter.tags.map((tag) => ( // ONE DAY THESE WILL BECOME LINKS TO TAG PAGES
+          <div className='col-1' key={tag}>
+            #
+            {tag}
+          </div>
+        ))}
       </div>
       <div className='row'>
         <div className='col-12'>
@@ -39,7 +39,6 @@ export default function BlogFooter(props) {
 }
 
 BlogFooter.propTypes = {
-  id: PropTypes.string,
   post: PropTypes.shape({
     fields: PropTypes.shape({
       slug: PropTypes.string,
@@ -54,5 +53,5 @@ BlogFooter.propTypes = {
       imageAlt: PropTypes.string,
       imageUrl: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };

@@ -6,16 +6,17 @@ import '../components/styles/bootstrap.css';
 import Layout from '../components/layout';
 import BlogPreview from '../components/Blog-Preview';
 
-export default function Home(props) {
-  const nodes = props.data.allMarkdownRemark.edges;
+export default function Home({ data }) {
+  const nodes = data.allMarkdownRemark.edges;
+  const { site } = data;
   return (
-  <Layout mainImgUrl={ props.data.site.siteMetadata.defaultImgUrl } mainImgAlt="Main Image" >
-    <div className='container-fluid'>
-      {nodes.map(({ node }) => (
-        <BlogPreview key={node.id} postInfo={node} />
-      ))}
-    </div>
-  </Layout>
+    <Layout mainImgUrl={site.siteMetadata.defaultImgUrl}>
+      <div className='container-fluid'>
+        {nodes.map(({ node }) => (
+          <BlogPreview key={node.id} postInfo={node} />
+        ))}
+      </div>
+    </Layout>
   );
 }
 
@@ -75,5 +76,5 @@ Home.propTypes = {
         }),
       })),
     }),
-  }),
+  }).isRequired,
 };

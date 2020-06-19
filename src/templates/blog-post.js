@@ -5,14 +5,14 @@ import '../components/styles/bootstrap.css';
 import Layout from '../components/layout';
 import BlogFooter from '../components/Blog-Footer';
 
-export default function BlogPost(props) {
-  const post = props.data.markdownRemark;
+export default function BlogPost({ data }) {
+  const post = data.markdownRemark;
   return (
-    <Layout mainImgUrl={ post.frontmatter.imageUrl } mainImgAlt={ post.frontmatter.imageAlt }>
+    <Layout mainImgUrl={post.frontmatter.imageUrl} mainImgAlt={post.frontmatter.imageAlt}>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>
-            {post.frontmatter.title} ****THIS TITLE HAS NOT YET BEEN STYLED****
+            {post.frontmatter.title}
           </div>
         </div>
         <div className='row'>
@@ -62,5 +62,5 @@ BlogPost.propTypes = {
         imageUrl: PropTypes.string,
       }),
     }),
-  }),
+  }).isRequired,
 };
