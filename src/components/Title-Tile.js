@@ -14,8 +14,8 @@ export default function TitleTile(props) {
     }
     `);
   return (
-    <div className="container-fluid">
-        <div className='container'>
+    <div className="container-fluid" style={{ background: `url(${props.imgUrl}) no-repeat center`, backgroundSize: 'cover' }}>
+        <div className='container' style={{ height: '35vh' }}>
             <Link
                 to="/"
                 className='row'
@@ -54,4 +54,5 @@ export default function TitleTile(props) {
 
 TitleTile.propTypes = {
   imgUrl: PropTypes.string,
+  imgAlt: PropTypes.string,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
 export default function BlogFooter(props) {
@@ -39,5 +40,26 @@ export default function BlogFooter(props) {
 
 BlogFooter.propTypes = {
   id: PropTypes.string,
-  title: PropTypes.string,
+  post: PropTypes.object, // FIX THIS
 };
+
+// Query For Finding Related Articles Based On Tags
+
+// const data = useStaticQuery(graphql`
+// query {
+//   {
+//     allMarkdownRemark(filter: {frontmatter: {tags: {in: ["lorem", "metal"]}}}) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//           }
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `);

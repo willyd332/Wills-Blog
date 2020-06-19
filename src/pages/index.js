@@ -9,7 +9,7 @@ import BlogPreview from '../components/Blog-Preview';
 export default function Home(props) {
   const nodes = props.data.allMarkdownRemark.edges;
   return (
-  <Layout>
+  <Layout mainImgUrl={ props.data.site.siteMetadata.defaultImgUrl } mainImgAlt="Main Image" >
     <div className='container-fluid'>
       {nodes.map(({ node }) => (
         <BlogPreview key={node.id} postInfo={node} />
@@ -21,6 +21,11 @@ export default function Home(props) {
 
 export const data = graphql`
 {
+  site {
+    siteMetadata {
+      defaultImgUrl
+    }
+  }
   allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
     edges {
       node {
@@ -45,6 +50,11 @@ export const data = graphql`
 
 Home.propTypes = {
   data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        defaultImgUrl: PropTypes.string,
+      }),
+    }),
     allMarkdownRemark: PropTypes.shape({
       totalCount: PropTypes.number,
       edges: PropTypes.arrayOf(PropTypes.shape({

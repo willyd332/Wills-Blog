@@ -5,9 +5,10 @@ import TitleTile from './Title-Tile';
 import InfoTile from './Info-Tile';
 
 export default function Layout(props) {
+  console.log(props);
   return (
     <div className='container-fluid'>
-      <TitleTile imgUrl='https://cdn.spacetelescope.org/archives/images/wallpaper5/heic1502a.jpg' />
+      <TitleTile imgUrl={ props.mainImgUrl } imgAlt={ props.mainImgAlt }/>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-xl-10 col-lg-9' style={{ border: '1px solid black' }}>
@@ -27,4 +28,6 @@ Layout.propTypes = {
     PropTypes.array,
     PropTypes.object,
   ]),
+  mainImgUrl: PropTypes.string,
+  mainImgAlt: PropTypes.string,
 };

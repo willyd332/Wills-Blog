@@ -14,7 +14,7 @@ export default function BlogPreview(props) {
                 {postInfo.frontmatter.title}
             </div>
             <img
-              className='col-12' 
+              className='col-12'
               src={ postInfo.frontmatter.imageUrl }
               alt={postInfo.frontmatter.imageAlt}
 

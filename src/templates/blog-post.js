@@ -8,7 +8,7 @@ import BlogFooter from '../components/Blog-Footer';
 export default function BlogPost(props) {
   const post = props.data.markdownRemark;
   return (
-    <Layout>
+    <Layout mainImgUrl={ post.frontmatter.imageUrl } mainImgAlt={ post.frontmatter.imageAlt }>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>
@@ -19,7 +19,7 @@ export default function BlogPost(props) {
           <div className='col-12' dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </div>
-      <BlogFooter id={post.id} title={post.frontmatter.title} />
+      <BlogFooter id={post.id} post={post} />
     </Layout>
   );
 }
@@ -35,6 +35,11 @@ export const data = graphql`
       id
       frontmatter {
         title
+        author
+        date
+        imageAlt
+        imageUrl
+        tags
       }
     }
   }
@@ -50,6 +55,11 @@ BlogPost.propTypes = {
       html: PropTypes.string,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
+        date: PropTypes.string,
+        author: PropTypes.string,
+        tags: PropTypes.array,
+        imageAlt: PropTypes.string,
+        imageUrl: PropTypes.string,
       }),
     }),
   }),
