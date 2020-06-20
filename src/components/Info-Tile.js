@@ -8,6 +8,7 @@ export default function InfoTile() {
       allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
         edges {
           node {
+            id
             fields {
               slug
             }
@@ -33,7 +34,7 @@ export default function InfoTile() {
       return (
         <Link
           to={node.fields.slug}
-          key={node.fields.slugnode.fields.slug}
+          key={node.fields.slug}
           className='col-12'
         >
           {node.frontmatter.title}
@@ -44,8 +45,8 @@ export default function InfoTile() {
   });
 
   // eslint-disable-next-line max-len
-  const tagsInJsx = Object.keys(tags).map((tag, index) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
-    <div key={data.allMarkdownRemark.edges[index].id} className='col-6'>
+  const tagsInJsx = Object.keys(tags).map((tag) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
+    <div key={tag} className='col-6'>
       #
       {tag}
     </div>
