@@ -14,7 +14,7 @@ export default function Layout({ children, mainImgUrl }) {
       <TitleTile imgUrl={mainImgUrl} />
       <div className='container-fluid'>
         <div className='row'>
-          <div className={'col-xl-10 col-lg-9 ' + styles.contentBox}>
+          <div className={`col-xl-10 col-lg-9 ${styles.contentBox}`}>
             {children}
           </div>
           <div className='col-lg-3 col-xl-2 d-none d-lg-block d-xl-block'>
