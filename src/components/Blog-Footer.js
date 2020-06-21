@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import frontmatter from './prop-types/frontmatter';
 
 export default function BlogFooter({ post }) {
   return (
@@ -45,13 +46,6 @@ BlogFooter.propTypes = {
     }),
     id: PropTypes.string,
     html: PropTypes.string,
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string,
-      date: PropTypes.string,
-      author: PropTypes.string,
-      tags: PropTypes.array,
-      imageAlt: PropTypes.string,
-      imageUrl: PropTypes.string,
-    }),
+    frontmatter,
   }).isRequired,
 };

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import '../components/styles/bootstrap.css';
 import Layout from '../components/layout';
 import BlogFooter from '../components/Blog-Footer';
+import frontmatter from '../components/prop-types/frontmatter';
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
@@ -54,14 +55,7 @@ BlogPost.propTypes = {
       }),
       id: PropTypes.string,
       html: PropTypes.string,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        date: PropTypes.string,
-        author: PropTypes.string,
-        tags: PropTypes.array,
-        imageAlt: PropTypes.string,
-        imageUrl: PropTypes.string,
-      }),
+      frontmatter,
     }),
   }).isRequired,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import frontmatter from './prop-types/frontmatter';
 
 export default function BlogPreview(props) {
   const { postInfo } = props;
@@ -41,14 +42,7 @@ export default function BlogPreview(props) {
 BlogPreview.propTypes = {
   postInfo: PropTypes.shape({
     id: PropTypes.string,
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string,
-      date: PropTypes.string,
-      author: PropTypes.string,
-      tags: PropTypes.array,
-      imageAlt: PropTypes.string,
-      imageUrl: PropTypes.string,
-    }),
+    frontmatter,
     fields: PropTypes.shape({
       slug: PropTypes.string,
     }),

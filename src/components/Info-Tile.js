@@ -29,20 +29,15 @@ export default function InfoTile() {
     });
   });
 
-  const recentPosts = data.allMarkdownRemark.edges.map(({ node }, index) => {
-    if (index < 10) {
-      return (
-        <Link
-          to={node.fields.slug}
-          key={node.fields.slug}
-          className='col-12'
-        >
-          {node.frontmatter.title}
-        </Link>
-      );
-    }
-    return null;
-  });
+  const recentPosts = data.allMarkdownRemark.edges.slice(0, 10).map(({ node }) => (
+    <Link
+      to={node.fields.slug}
+      key={node.fields.slug}
+      className='col-12'
+    >
+      {node.frontmatter.title}
+    </Link>
+  ));
 
   // eslint-disable-next-line max-len
   const tagsInJsx = Object.keys(tags).map((tag) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
