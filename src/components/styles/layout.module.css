@@ -1,5 +1,5 @@
 .mainBox {
-    background: #252422;
+    background: black;
     padding-right:0;
     padding-left:0;
 }
@@ -9,5 +9,5 @@
     min-height: 100vh;
     padding-top: 5%;
     padding-bottom: 5%;
-    border-right: 1px groove #EB5E28;
+    border-top: 1px groove #EB5E28;
 }

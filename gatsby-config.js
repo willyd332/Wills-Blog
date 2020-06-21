@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Will\'s Blog',
     description: 'A blog made by Will',
-    defaultImgUrl: 'https://cutewallpaper.org/21/stars-desktop-wallpapers/Large-Star-Background-Wallpapers,-G.sFDcY.jpg',
+    defaultImgUrl: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/509840/e92faddeff82a9ff5dd32cee441ed5f6f3094ad9.jpg',
   },
   plugins: [
     'gatsby-transformer-remark',
