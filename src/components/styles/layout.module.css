@@ -1,0 +1,13 @@
+.mainBox {
+    background: #252422;
+    padding-right:0;
+    padding-left:0;
+}
+
+
+.contentBox {
+    min-height: 100vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* border-right: 1px groove #EB5E28; */
+}

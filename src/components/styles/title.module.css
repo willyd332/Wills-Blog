@@ -1,0 +1,51 @@
+.headerBox {
+    height: 75vh;
+    padding-top: 25vh;
+    min-height: 00px;
+    /* border-bottom: 1px groove #EB5E28; */
+}
+
+.titleBox {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    color: #CCC5B9;
+    text-decoration: inherit;
+    font-size: 60px;
+    font-weight: 600;
+    text-shadow: 2px 1px #252422;
+}
+
+.title:hover {
+    color: #EB5E28;
+    text-decoration: inherit;
+}
+
+.subtitle {
+    color: #CCC5B9;
+    text-decoration: inherit;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 1px 1px #252422;
+}
+
+.linkBox {
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.link {
+    color: #FFFCF2;
+    text-decoration: inherit;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 1px 1px #252422;
+}
+
+.link:hover {
+    color: #EB5E28;
+    text-decoration: inherit;
+}
