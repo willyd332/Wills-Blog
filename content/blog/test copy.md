@@ -6,7 +6,8 @@ author: Will
 tags:
   - lorem
   - test
-iamge: ../assets/profile.jpg
+imageUrl: https://iso.500px.com/wp-content/uploads/2020/03/I-Follow-the-Sun-By-Kristina-Wushke-3000x2000.jpg
+imageAlt: test image
 ---
 
 ##This is not the greated markdown in word.

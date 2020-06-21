@@ -1,50 +1,32 @@
 import React from 'react';
-import { useStaticQuery, Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import './bootstrap-4.5.0-dist/css/bootstrap.css';
 import './styles/layout.css';
+import TitleTile from './Title-Tile';
+import InfoTile from './Info-Tile';
 
-export default function Layout(props) {
-  const data = useStaticQuery(graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-        `);
+export default function Layout({ children, mainImgUrl }) {
   return (
-    <div
-    className='layoutBox container-fluid'
-    >
-        <div
-        className='navBox row'
-        >
-            <Link
-              to="/"
-              className='title col-lg-6 col-4 offset-1'
-             >
-                {data.site.siteMetadata.title}
-            </Link>
-            <Link
-              className='navLink col-lg-2 col-3'
-              to="/"
-            >
-                Home
-            </Link>
-            <Link
-              className='navLink col-lg-2 col-3 left-offset-1'
-              to="/posts/"
-            >
-                Archive
-            </Link>
+    <div className='container-fluid'>
+      <TitleTile imgUrl={mainImgUrl} />
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-xl-10 col-lg-9' style={{ border: '1px solid black' }}>
+            {children}
+          </div>
+          <div className='col-lg-3 col-xl-2 d-none d-lg-block d-xl-block' style={{ border: '1px solid black' }}>
+            <InfoTile />
+          </div>
         </div>
-        {props.children}
-   </div>
+
+      </div>
+    </div>
   );
 }
 
 Layout.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
+  mainImgUrl: PropTypes.string.isRequired,
 };
