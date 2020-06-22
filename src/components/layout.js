@@ -17,7 +17,7 @@ export default function Layout({ children, mainImgUrl, subtitle }) {
           <div className={`col-xl-10 col-lg-9 ${styles.contentBox}`}>
             {children}
           </div>
-          <div className='col-lg-3 col-xl-2 d-none d-lg-block d-xl-block'>
+          <div className={`col-lg-3 col-xl-2 d-none d-lg-block d-xl-block ${styles.infoBox}`}>
             <InfoTile />
           </div>
         </div>

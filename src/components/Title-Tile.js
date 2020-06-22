@@ -17,7 +17,7 @@ export default function TitleTile({ imgUrl, subtitle }) {
     `);
   return (
     <div className={`container-fluid ${styles.headerBox}`}>
-      <div className={`container-fluid ${styles.titleBox}`} style={{ background: `url(${imgUrl}) center fixed no-repeat `, backgroundSize: 'contain' }}>
+      <div className={`container-fluid ${styles.titleBox}`} style={{ background: `url(${imgUrl}) center fixed no-repeat `, backgroundSize: 'cover' }}>
         <Link
           to='/'
           className={`row ${styles.title}`}
@@ -31,21 +31,21 @@ export default function TitleTile({ imgUrl, subtitle }) {
             { subtitle }
           </div>
         </div>
-        <div className='row'>
-          <div className={`offset-3 col-6 ${styles.linkBox}`}>
-            <Link
-              to='/'
-              className={`col ${styles.link}`}
-            >
-              Home
-            </Link>
-            <Link
-              to='/contact/'
-              className={`col ${styles.link}`}
-            >
-              Contact
-            </Link>
-          </div>
+      </div>
+      <div className='row'>
+        <div className={`offset-3 col-6 ${styles.linkBox}`}>
+          <Link
+            to='/'
+            className={`col ${styles.link}`}
+          >
+            Home
+          </Link>
+          <Link
+            to='/contact/'
+            className={`col ${styles.link}`}
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </div>

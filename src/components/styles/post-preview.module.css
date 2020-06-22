@@ -11,8 +11,8 @@ a {
     height: 60vh;
     border-right: 1px groove #EB5E28;
     border-left: 1px groove #EB5E28;
-    padding-right: 20%;
-    padding-left: 20%;
+    /* padding-right: 20%;
+    padding-left: 20%; */
     margin-bottom: 200px;
     display: flex;
     align-items: center;

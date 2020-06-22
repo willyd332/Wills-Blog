@@ -6,6 +6,14 @@
 
 
 .contentBox {
+    margin-top: 20vh;
+    min-height: 100vh;
+    padding-top: 0%;
+    padding-bottom: 5%;
+}
+
+.infoBox {
+    margin-top: 20vh;
     min-height: 100vh;
     padding-top: 0%;
     padding-bottom: 5%;
