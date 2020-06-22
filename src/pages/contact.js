@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 
 export default function Contact({ data }) {
   return (
-    <Layout mainImgUrl={data.site.siteMetadata.contactImgUrl}>
+    <Layout contact mainImgUrl={data.site.siteMetadata.contactImgUrl}>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>

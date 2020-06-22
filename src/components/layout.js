@@ -7,11 +7,15 @@ import './styles/globalStyles.css';
 import TitleTile from './Title-Tile';
 import InfoTile from './Info-Tile';
 
-export default function Layout({ children, mainImgUrl }) {
+export default function Layout({ children, mainImgUrl, contact }) {
   const styles = layoutStyles;
+  let isContact = false;
+  if (contact) {
+    isContact = true;
+  }
   return (
     <div className={`container-fluid ${styles.mainBox}`}>
-      <TitleTile imgUrl={mainImgUrl} />
+      <TitleTile isContact={isContact} imgUrl={mainImgUrl} />
       <div className='container-fluid'>
         <div className='row'>
           <div className={`col-xl-10 col-lg-9 ${styles.contentBox}`}>
@@ -33,4 +37,5 @@ Layout.propTypes = {
     PropTypes.object,
   ]).isRequired,
   mainImgUrl: PropTypes.string.isRequired,
+  contact: PropTypes.bool,
 };

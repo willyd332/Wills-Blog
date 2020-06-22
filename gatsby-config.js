@@ -8,8 +8,10 @@ module.exports = {
   siteMetadata: {
     title: 'Will\'s Blog',
     description: 'A blog made by Will',
-    homeImgUrl: 'https://i.imgur.com/tsIbALM.png',
-    contactImgUrl: 'https://i.imgur.com/h9dBE7p.png',
+    // homeImgUrl: 'https://i.imgur.com/tsIbALM.png',
+    // contactImgUrl: 'https://i.imgur.com/h9dBE7p.png',
+    homeImgUrl: '',
+    contactImgUrl: '',
   },
   plugins: [
     'gatsby-transformer-remark',

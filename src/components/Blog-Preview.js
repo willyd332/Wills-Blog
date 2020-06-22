@@ -14,7 +14,7 @@ export default function BlogPreview(props) {
         className='row'
       >
         <div
-          className={`col-11 ${styles.previewImg}`}
+          className={`col-10 offset-1 ${styles.previewImg}`}
           style={{ background: `url(${postInfo.frontmatter.imageUrl}) center no-repeat fixed`, backgroundSize: 'contain' }}
         >
           <div className={'row center-vertically ' + styles.postInfoBox}>

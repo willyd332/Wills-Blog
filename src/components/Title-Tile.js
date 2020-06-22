@@ -3,7 +3,7 @@ import { useStaticQuery, Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import titleStyle from './styles/title.module.css';
 
-export default function TitleTile({ imgUrl }) {
+export default function TitleTile({ imgUrl, isContact }) {
   const styles = titleStyle;
   const data = useStaticQuery(graphql`
     query {
@@ -16,7 +16,7 @@ export default function TitleTile({ imgUrl }) {
     }
     `);
   return (
-    <div className={`container-fluid ${styles.headerBox}`} >
+    <div className={`container-fluid ${styles.headerBox}`}>
       <div className={`container-fluid ${styles.titleBox}`} style={{ background: `url(${imgUrl}) center fixed no-repeat `, backgroundPosition: '0px -10%', backgroundSize: 'contain' }}>
         <Link
           to='/'
@@ -28,11 +28,9 @@ export default function TitleTile({ imgUrl }) {
         </Link>
         <div className={`row ${styles.subtitle}`}>
           <div className='col'>
-            {data.site.siteMetadata.description}
+            {isContact ? 'Contact Page' : data.site.siteMetadata.description }
           </div>
         </div>
-      </div>
-      <div className='container'>
         <div className='row'>
           <div className={`offset-3 col-6 ${styles.linkBox}`}>
             <Link
@@ -56,4 +54,5 @@ export default function TitleTile({ imgUrl }) {
 
 TitleTile.propTypes = {
   imgUrl: PropTypes.string.isRequired,
+  isContact: PropTypes.bool
 };

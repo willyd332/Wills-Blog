@@ -37,9 +37,8 @@
 .linkBox {
     width: 100%;
     text-align: center;
-    margin-top: 35px;
     display: flex;
-    margin-top: 10vh;
+    margin-top: 25vh;
 }
 
 .link {
