@@ -32,6 +32,20 @@ export default function TitleTile({ imgUrl, subtitle, isPost = false }) {
           </div>
         </div>
       </div>
+      <div className={`row ${styles.linkBox}`}>
+        <Link
+          to='/'
+          className={`col-6 ${styles.link}`}
+        >
+          Home
+        </Link>
+        <Link
+          to='/contact/'
+          className={`col-6 ${styles.link}`}
+        >
+          Contact
+        </Link>
+      </div>
     </div>
   );
 }

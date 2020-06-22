@@ -11,13 +11,12 @@ a {
     height: 60vh;
     border-right: 1px groove #EB5E28;
     border-left: 1px groove #EB5E28;
-    /* padding-right: 20%;
-    padding-left: 20%; */
     margin-bottom: 200px;
     display: flex;
     align-items: center;
     color: #FFFCF2;
     text-decoration: inherit;
+    overflow: hidden;
 }
 
 .previewImg:hover > .postInfoBox {
@@ -38,6 +37,7 @@ a {
     font-size: 40px;
     font-weight: 800;
     text-shadow: 4px -2px black;
+    text-align: center;
 }
 
 .postExcerpt {
@@ -56,8 +56,34 @@ a {
     display: inline-block;
 }
 
+.postDateMobile {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .postData {
         display: none;
+    }
+    .postDateMobile {
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-shadow: 4px -2px black;
+        text-align: center;
+    }
+
+    .postTitle {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .postInfoBox {
+        margin-top: 10%;
+        height: 80%;
+        overflow: hidden;
+    }
+    .previewImg {
+        align-items: start;
     }
 }
