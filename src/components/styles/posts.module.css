@@ -31,6 +31,11 @@
     margin-top: 50px;
 }
 
+.text p strong{
+    color: #FFFCF2;
+    font-weight: 900;
+}
+
 .text h2{
     margin-top: 50px;
 }
