@@ -46,12 +46,16 @@
     margin-top: 30px;
     padding-top: 5px;
     border-top: 1px groove #EB5E28;
+    width: 80%;
+    margin-left: 20%;
 }
 
 .recentsLink:hover {
     color: #EB5E28;
     text-decoration: inherit;
     border-top: 1px groove #CCC5B9;
+    width: 100%;
+    margin-left: 0%;
 }
 
 .tag {
