@@ -2,30 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import frontmatter from './prop-types/frontmatter';
 import Socials from './Socials';
+import footerStyles from './styles/footer.module.css';
 
 export default function BlogFooter({ post }) {
+  const styles = footerStyles;
   return (
-    <div className='container-fluid'>
+    <div className={`container-fluid ${styles.footerBox}`}>
       <div className='row' />
-      <div className='row'>
-        <div className='col-12'>
-          <Socials />
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col-4'>
-          Related Post #1
-        </div>
-        <div className='col-4'>
-          Related Post #2
-        </div>
-        <div className='col-4'>
-          Related Post #3
-        </div>
-      </div>
-      <div className='row'>
+      <div className={`row ${styles.tagBox}`}>
         {post.frontmatter.tags.map((tag) => ( // ONE DAY THESE WILL BECOME LINKS TO TAG PAGES
-          <div className='col-1' key={tag}>
+          <div className='col-4' key={tag}>
             #
             {tag}
           </div>
@@ -33,7 +19,7 @@ export default function BlogFooter({ post }) {
       </div>
       <div className='row'>
         <div className='col-12'>
-          One Day, I will add a coment section...
+          <Socials />
         </div>
       </div>
     </div>

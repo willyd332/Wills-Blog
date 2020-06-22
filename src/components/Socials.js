@@ -1,10 +1,12 @@
 import React from 'react';
 import linkedin from '../../content/assets/linkedin.png';
 import github from '../../content/assets/github.png';
+import socialStyles from './styles/socials.module.css';
 
 export default function Links() {
+  const styles = socialStyles;
   return (
-    <div className='container'>
+    <div className={`container ${styles.socialBox}`}>
       <div className='row'>
         <a
           href='https://github.com/willyd332'
@@ -26,7 +28,7 @@ export default function Links() {
         >
           <img
             src={linkedin}
-            style={{ width: '60px' }}
+            style={{ width: '80px' }}
             alt='LinkedIn'
           />
         </a>

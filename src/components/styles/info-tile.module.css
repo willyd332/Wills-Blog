@@ -6,6 +6,28 @@
     margin-bottom: 15vh;
 }
 
+
+.linkBox {
+    text-align: center;
+    margin-bottom: 15vh;
+    border-bottom: 1px solid #CCC5B9;
+}
+
+.link {
+    color: #FFFCF2;
+    text-decoration: inherit;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+    text-shadow: -1px 0px 1px #CCC5B9;
+}
+
+.link:hover {
+    color: #EB5E28;
+    text-decoration: inherit;
+}
+
+
 .infoTitle {
     color: #CCC5B9;
     text-decoration: inherit;
@@ -39,3 +61,4 @@
     text-shadow: .1px 0px #EB5E28;
     margin-top: 20px;
 }
+
