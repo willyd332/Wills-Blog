@@ -33,3 +33,29 @@
     font-weight: 400;
     text-shadow: 2px 0px #252422;
 }
+
+.linkBox {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .linkBox {
+        display: block;
+        text-align: center;
+        margin-top: 5vh;
+    }
+    
+    .link {
+        color: #FFFCF2;
+        text-decoration: inherit;
+        text-align: center;
+        font-weight: 800;
+        font-size: 20px;
+        text-shadow: -1px 0px 1px #CCC5B9;
+    }
+    
+    .link:hover {
+        color: #EB5E28;
+        text-decoration: inherit;
+    }
+}

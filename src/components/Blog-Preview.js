@@ -27,8 +27,11 @@ export default function BlogPreview({ postInfo }) {
           style={{ background: `url(${postInfo.frontmatter.imageUrl}) center no-repeat fixed`, backgroundSize: 'cover' }}
         >
           <div className={`row center-vertically ${styles.postInfoBox}`}>
-            <div className={`col-12 text-center ${styles.postTitle}`}>
+            <div className={`col-12 ${styles.postTitle}`}>
               {postInfo.frontmatter.title}
+            </div>
+            <div className={`offset-6 col-6 ${styles.postDateMobile}`}>
+              {postInfo.frontmatter.date}
             </div>
             <div className={`col-12 ${styles.postExcerpt}`}>
               {postInfo.excerpt}
