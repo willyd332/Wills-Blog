@@ -10,7 +10,11 @@ import frontmatter from '../components/prop-types/frontmatter';
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
   return (
-    <Layout mainImgUrl={post.frontmatter.imageUrl} mainImgAlt={post.frontmatter.imageAlt}>
+    <Layout
+      subtitle={post.frontmatter.title}
+      mainImgUrl={post.frontmatter.imageUrl}
+      mainImgAlt={post.frontmatter.imageAlt}
+    >
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>

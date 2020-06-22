@@ -31,25 +31,30 @@ a {
     height: 80%;
     display: flex;
     align-items: center;
-    text-shadow: 4px -2px black;
     margin: 0 auto;
 }
-
-
 
 .postTitle {
     font-size: 40px;
     font-weight: 800;
+    text-shadow: 4px -2px black;
 }
 
 .postExcerpt {
-
+    padding-right: 10%;
+    padding-left: 10%;
+    text-shadow: 2px -1px black;
+    font-size: 20px;
 }
 
 .postData {
-
+    width: 100%;
+    text-align: center;
 }
 
+.postDataCol {
+    display: inline-block;
+}
 
 @media (max-width: 900px) {
     .postData {

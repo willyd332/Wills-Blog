@@ -11,7 +11,7 @@ export default function Home({ data }) {
   const nodes = data.allMarkdownRemark.edges;
   const { site } = data;
   return (
-    <Layout mainImgUrl={site.siteMetadata.homeImgUrl}>
+    <Layout subtitle={site.siteMetadata.description} mainImgUrl={site.siteMetadata.homeImgUrl}>
       <div className='container-fluid'>
         {nodes.map(({ node }) => (
           <BlogPreview key={node.id} postInfo={node} />
@@ -26,6 +26,7 @@ export const data = graphql`
   site {
     siteMetadata {
       homeImgUrl
+      description
     }
   }
   allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
@@ -55,6 +56,7 @@ Home.propTypes = {
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         homeImgUrl: PropTypes.string,
+        description: PropTypes.string,
       }),
     }),
     allMarkdownRemark: PropTypes.shape({

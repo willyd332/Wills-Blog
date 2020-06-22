@@ -4,11 +4,20 @@ import PropTypes from 'prop-types';
 import frontmatter from './prop-types/frontmatter';
 import previewStyle from './styles/post-preview.module.css';
 
-export default function BlogPreview(props) {
+export default function BlogPreview({ postInfo }) {
   const styles = previewStyle;
-  const { postInfo } = props;
+  // REFACTOR
+  const tags = [];
+  for (let i = 0; i < 3; i += 1) {
+    if (postInfo.frontmatter.tags[i]) {
+      tags.push(`#${postInfo.frontmatter.tags[i]}`);
+    } else {
+      tags.push('');
+    }
+  }
+  // REFACTOR
   return (
-    <div className={'container-fluid' + styles.previewBox}>
+    <div className={`container-fluid${styles.previewBox}`}>
       <Link
         to={postInfo.fields.slug}
         className='row'
@@ -17,24 +26,20 @@ export default function BlogPreview(props) {
           className={`col-10 offset-1 ${styles.previewImg}`}
           style={{ background: `url(${postInfo.frontmatter.imageUrl}) center no-repeat fixed`, backgroundSize: 'contain' }}
         >
-          <div className={'row center-vertically ' + styles.postInfoBox}>
-            <div className={'col-12 text-center ' + styles.postTitle}>
+          <div className={`row center-vertically ${styles.postInfoBox}`}>
+            <div className={`col-12 text-center ${styles.postTitle}`}>
               {postInfo.frontmatter.title}
             </div>
-            <div className={'col-12 ' + styles.postExcerpt}>
+            <div className={`col-12 ${styles.postExcerpt}`}>
               {postInfo.excerpt}
             </div>
-            <div className={'row ' + styles.postData}>
-              <div className='col-2 offset-1'>
-                Other Info
-              </div>
-              <div className='col-2 offset-1'>
-                Other Info
-              </div>
-              <div className='col-2 offset-1'>
-                Other Info
-              </div>
-              <div className='col-2 offset-1'>
+            <div className={`row ${styles.postData}`}>
+              { tags.map((tag) => (
+                <div className='col-3' key={tag}>
+                  {tag}
+                </div>
+              ))}
+              <div className='col-3'>
                 {postInfo.frontmatter.date}
               </div>
             </div>
