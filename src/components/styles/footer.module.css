@@ -1,0 +1,12 @@
+
+.footerBox {
+    border-left: 1px groove #EB5E28;
+    padding: 40px;
+    text-align: center;
+}
+
+.tagBox {
+   margin: 20px 0;
+   color: #CCC5B9;
+}
+

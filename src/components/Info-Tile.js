@@ -50,6 +50,20 @@ export default function InfoTile() {
 
   return (
     <div className={`container-fluid ${styles.mainInfoBox}`}>
+      <div className={`row ${styles.linkBox}`}>
+        <Link
+          to='/'
+          className={`col-6 ${styles.link}`}
+        >
+          Home
+        </Link>
+        <Link
+          to='/contact/'
+          className={`col- ${styles.link}`}
+        >
+          Contact
+        </Link>
+      </div>
       <div className={`row ${styles.recentsBox}`}>
         <div className={`col-12 ${styles.infoTitle}`}>
           Recent Posts
@@ -58,7 +72,7 @@ export default function InfoTile() {
       </div>
       <div className='row'>
         <div className={`col-12 ${styles.infoTitle}`}>
-          Tags
+          All Tags
         </div>
         {tagsInJsx}
       </div>

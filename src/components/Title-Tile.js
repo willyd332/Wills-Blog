@@ -32,22 +32,6 @@ export default function TitleTile({ imgUrl, subtitle, isPost = false }) {
           </div>
         </div>
       </div>
-      <div className='row'>
-        <div className={`offset-3 col-6 ${styles.linkBox}`}>
-          <Link
-            to='/'
-            className={`col ${styles.link}`}
-          >
-            Home
-          </Link>
-          <Link
-            to='/contact/'
-            className={`col ${styles.link}`}
-          >
-            Contact
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
