@@ -16,8 +16,8 @@ export default function TitleTile({ imgUrl }) {
     }
     `);
   return (
-    <div className={`container-fluid ${styles.headerBox}`} style={{ background: `url(${imgUrl}) center no-repeat fixed`, backgroundSize: 'cover' }}>
-      <div className={`container-fluid ${styles.titleBox}`}>
+    <div className={`container-fluid ${styles.headerBox}`} >
+      <div className={`container-fluid ${styles.titleBox}`} style={{ background: `url(${imgUrl}) center fixed no-repeat `, backgroundPosition: '0px -10%', backgroundSize: 'contain' }}>
         <Link
           to='/'
           className={`row ${styles.title}`}

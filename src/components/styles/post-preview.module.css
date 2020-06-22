@@ -1,3 +1,56 @@
+
+.previewBox {
+    padding: 0px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
 .previewImg {
-    height: 70vh;
+    height: 60vh;
+    border-right: 1px groove #EB5E28;
+    padding-right: 20%;
+    padding-left: 20%;
+    margin-bottom: 200px;
+    display: flex;
+    align-items: center;
+    color: #FFFCF2;
+    text-decoration: inherit;
+}
+
+.previewImg:hover > .postInfoBox {
+    background-color: rgba(64,61,57,.5);
+    color: #EB5E28;
+}
+
+.postInfoBox {
+    background-color: rgba(64,61,57,.2);
+    display: inline-block;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    text-shadow: 4px -2px black;
+}
+
+
+
+.postTitle {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.postExcerpt {
+
+}
+
+.postData {
+
+}
+
+
+@media (max-width: 900px) {
+    .postData {
+        display: none;
+    }
 }

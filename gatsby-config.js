@@ -8,7 +8,8 @@ module.exports = {
   siteMetadata: {
     title: 'Will\'s Blog',
     description: 'A blog made by Will',
-    defaultImgUrl: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/509840/e92faddeff82a9ff5dd32cee441ed5f6f3094ad9.jpg',
+    homeImgUrl: 'https://i.imgur.com/tsIbALM.png',
+    contactImgUrl: 'https://i.imgur.com/h9dBE7p.png',
   },
   plugins: [
     'gatsby-transformer-remark',

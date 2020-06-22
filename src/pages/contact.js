@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 
 export default function Contact({ data }) {
   return (
-    <Layout mainImgUrl={data.site.siteMetadata.defaultImgUrl}>
+    <Layout mainImgUrl={data.site.siteMetadata.contactImgUrl}>
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12'>
@@ -23,7 +23,7 @@ export const data = graphql`
 {
   site {
     siteMetadata {
-      defaultImgUrl
+      contactImgUrl
     }
   }
 }`;
@@ -32,7 +32,7 @@ Contact.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        defaultImgUrl: PropTypes.string,
+        contactImgUrl: PropTypes.string,
       }),
     }),
   }).isRequired,

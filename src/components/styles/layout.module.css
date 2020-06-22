@@ -7,7 +7,6 @@
 
 .contentBox {
     min-height: 100vh;
-    padding-top: 5%;
+    padding-top: 0%;
     padding-bottom: 5%;
-    border-top: 1px groove #EB5E28;
 }
