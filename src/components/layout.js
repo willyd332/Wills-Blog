@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles/layout.css';
+import layoutStyles from './styles/layout.module.css';
+import './styles/globalStyles.css';
+
+// Components
 import TitleTile from './Title-Tile';
 import InfoTile from './Info-Tile';
 
-export default function Layout({ children, mainImgUrl }) {
+export default function Layout({
+  children, mainImgUrl, subtitle, isPost = false,
+}) {
+  const styles = layoutStyles;
   return (
-    <div className='container-fluid'>
-      <TitleTile imgUrl={mainImgUrl} />
+    <div className={`container-fluid ${styles.mainBox}`}>
+      <TitleTile isPost={isPost} subtitle={subtitle} imgUrl={mainImgUrl} />
       <div className='container-fluid'>
         <div className='row'>
-          <div className='col-xl-10 col-lg-9' style={{ border: '1px solid black' }}>
+          <div className={`col-xl-10 col-lg-9 ${styles.contentBox}`}>
             {children}
           </div>
-          <div className='col-lg-3 col-xl-2 d-none d-lg-block d-xl-block' style={{ border: '1px solid black' }}>
+          <div className={`col-lg-3 col-xl-2 d-none d-lg-block d-xl-block ${styles.infoBox}`}>
             <InfoTile />
           </div>
         </div>
@@ -29,4 +35,10 @@ Layout.propTypes = {
     PropTypes.object,
   ]).isRequired,
   mainImgUrl: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  isPost: PropTypes.bool,
+};
+
+Layout.defaultProps = {
+  isPost: false,
 };

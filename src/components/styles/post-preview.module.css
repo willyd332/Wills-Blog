@@ -1,0 +1,63 @@
+
+.previewBox {
+    padding: 0px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.previewImg {
+    height: 60vh;
+    border-right: 1px groove #EB5E28;
+    border-left: 1px groove #EB5E28;
+    /* padding-right: 20%;
+    padding-left: 20%; */
+    margin-bottom: 200px;
+    display: flex;
+    align-items: center;
+    color: #FFFCF2;
+    text-decoration: inherit;
+}
+
+.previewImg:hover > .postInfoBox {
+    background-color: rgba(64,61,57,.5);
+    color: #EB5E28;
+}
+
+.postInfoBox {
+    background-color: rgba(64,61,57,.2);
+    display: inline-block;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.postTitle {
+    font-size: 40px;
+    font-weight: 800;
+    text-shadow: 4px -2px black;
+}
+
+.postExcerpt {
+    padding-right: 10%;
+    padding-left: 10%;
+    text-shadow: 2px -1px black;
+    font-size: 20px;
+}
+
+.postData {
+    width: 100%;
+    text-align: center;
+}
+
+.postDataCol {
+    display: inline-block;
+}
+
+@media (max-width: 900px) {
+    .postData {
+        display: none;
+    }
+}

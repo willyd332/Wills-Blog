@@ -1,0 +1,41 @@
+.mainInfoBox {
+
+}
+
+.recentsBox {
+    margin-bottom: 15vh;
+}
+
+.infoTitle {
+    color: #CCC5B9;
+    text-decoration: inherit;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px groove #CCC5B9;
+}
+
+.recentsLink {
+    color: #CCC5B9;
+    text-decoration: inherit;
+    font-size: 20px;
+    margin-top: 30px;
+    padding-top: 5px;
+    border-top: 1px groove #EB5E28;
+}
+
+.recentsLink:hover {
+    color: #EB5E28;
+    text-decoration: inherit;
+    border-top: 1px groove #CCC5B9;
+}
+
+.tag {
+    color: #403D39;
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: .1px 0px #EB5E28;
+    margin-top: 20px;
+}

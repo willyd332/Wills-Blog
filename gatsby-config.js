@@ -8,7 +8,8 @@ module.exports = {
   siteMetadata: {
     title: 'Will\'s Blog',
     description: 'A blog made by Will',
-    defaultImgUrl: 'https://i.pinimg.com/originals/c4/4c/65/c44c65bf318557e31158b30a0b8a38d4.jpg',
+    homeImgUrl: 'https://media.macphun.com/img/uploads/customer/blog/1548348087/15483505255c49f43d0c1ab5.02000369.jpeg?q=85&w=1680',
+    contactImgUrl: 'https://i.imgur.com/h9dBE7p.png',
   },
   plugins: [
     'gatsby-transformer-remark',
@@ -34,12 +35,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: 'blog',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
       },
     },
   ],

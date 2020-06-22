@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import frontmatter from './prop-types/frontmatter';
+import Socials from './Socials';
 
 export default function BlogFooter({ post }) {
   return (
@@ -8,7 +9,7 @@ export default function BlogFooter({ post }) {
       <div className='row' />
       <div className='row'>
         <div className='col-12'>
-          Share To Social Media Buttons
+          <Socials />
         </div>
       </div>
       <div className='row'>

@@ -6,7 +6,7 @@ author: Will
 tags:
   - lorem
   - test
-imageUrl: https://iso.500px.com/wp-content/uploads/2020/03/I-Follow-the-Sun-By-Kristina-Wushke-3000x2000.jpg
+imageUrl: https://marketingweek.imgix.net/content/uploads/2017/05/12103940/Coding-featured.jpg
 imageAlt: test image
 ---
 
