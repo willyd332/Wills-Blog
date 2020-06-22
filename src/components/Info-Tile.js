@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Socials from './Socials';
 import infoStyles from './styles/info-tile.module.css';
 
 export default function InfoTile() {
@@ -35,7 +34,7 @@ export default function InfoTile() {
     <Link
       to={node.fields.slug}
       key={node.fields.slug}
-      className={'col-12 ' + styles.recentsLink}
+      className={`col-12 ${styles.recentsLink}`}
     >
       {node.frontmatter.title}
     </Link>
@@ -43,22 +42,22 @@ export default function InfoTile() {
 
   // eslint-disable-next-line max-len
   const tagsInJsx = Object.keys(tags).map((tag) => ( // ONE DAY THESE WILL BE LINKS TO TAG PAGES
-    <div key={tag} className={'col-6 ' + styles.tag}>
+    <div key={tag} className={`col-6 ${styles.tag}`}>
       #
       {tag}
     </div>
   ));
 
   return (
-    <div className={'container-fluid ' + styles.mainInfoBox}>
-      <div className={'row ' + styles.recentsBox}>
-        <div className={"col-12 " + styles.infoTitle}>
+    <div className={`container-fluid ${styles.mainInfoBox}`}>
+      <div className={`row ${styles.recentsBox}`}>
+        <div className={`col-12 ${styles.infoTitle}`}>
           Recent Posts
         </div>
         {recentPosts}
       </div>
       <div className='row'>
-        <div className={"col-12 " + styles.infoTitle}>
+        <div className={`col-12 ${styles.infoTitle}`}>
           Tags
         </div>
         {tagsInJsx}
