@@ -3,7 +3,7 @@ import { useStaticQuery, Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import titleStyle from './styles/title.module.css';
 
-export default function TitleTile({ imgUrl, subtitle }) {
+export default function TitleTile({ imgUrl, subtitle, isPost = false }) {
   const styles = titleStyle;
   const data = useStaticQuery(graphql`
     query {
@@ -23,12 +23,12 @@ export default function TitleTile({ imgUrl, subtitle }) {
           className={`row ${styles.title}`}
         >
           <div className='col'>
-            {data.site.siteMetadata.title}
+            {isPost ? subtitle : data.site.siteMetadata.title}
           </div>
         </Link>
         <div className={`row ${styles.subtitle}`}>
           <div className='col'>
-            { subtitle }
+            {isPost ? data.site.siteMetadata.title : subtitle }
           </div>
         </div>
       </div>
@@ -55,4 +55,9 @@ export default function TitleTile({ imgUrl, subtitle }) {
 TitleTile.propTypes = {
   imgUrl: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  isPost: PropTypes.bool,
+};
+
+TitleTile.defaultProps = {
+  isPost: false,
 };

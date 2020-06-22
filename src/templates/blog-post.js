@@ -16,6 +16,7 @@ export default function BlogPost({ data }) {
       subtitle={post.frontmatter.title}
       mainImgUrl={post.frontmatter.imageUrl}
       mainImgAlt={post.frontmatter.imageAlt}
+      isPost
     >
       <div className={`container-fluid ${styles.postBox}`}>
         <div className={`row ${styles.titleBox}`}>

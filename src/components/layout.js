@@ -7,11 +7,13 @@ import './styles/globalStyles.css';
 import TitleTile from './Title-Tile';
 import InfoTile from './Info-Tile';
 
-export default function Layout({ children, mainImgUrl, subtitle }) {
+export default function Layout({
+  children, mainImgUrl, subtitle, isPost = false,
+}) {
   const styles = layoutStyles;
   return (
     <div className={`container-fluid ${styles.mainBox}`}>
-      <TitleTile subtitle={subtitle} imgUrl={mainImgUrl} />
+      <TitleTile isPost={isPost} subtitle={subtitle} imgUrl={mainImgUrl} />
       <div className='container-fluid'>
         <div className='row'>
           <div className={`col-xl-10 col-lg-9 ${styles.contentBox}`}>
@@ -34,4 +36,9 @@ Layout.propTypes = {
   ]).isRequired,
   mainImgUrl: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  isPost: PropTypes.bool,
+};
+
+Layout.defaultProps = {
+  isPost: false,
 };
